@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Business Platform Login</title>
+    <meta
+      name="description"
+      content="AI-Based Entrepreneur Decision Support & Business Recovery System"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="background-glow glow-one"></div>
+      <div class="background-glow glow-two"></div>
+
+      <header class="site-title-bar" aria-label="Website title">
+        <marquee behavior="scroll" direction="left" scrollamount="5">
+          AI-Based Entrepreneur Decision Support & Business Recovery System
+        </marquee>
+      </header>
+
+      <main class="login-card" aria-labelledby="login-title">
+        <div class="brand-block">
+          <p class="login-subtitle">YOUR BUSINESS PATHWAY</p>
+        </div>
+
+      
+
+        <form class="login-form" novalidate>
+          <p class="section-label">Select role</p>
+          <div class="role-switcher" role="radiogroup" aria-label="Select access role">
+            <label class="role-option">
+              <input type="radio" name="role" value="admin" />
+              <span>Admin</span>
+            </label>
+            <label class="role-option">
+              <input type="radio" name="role" value="entrepreneur" />
+              <span>Entrepreneur</span>
+            </label>
+          </div>
+
+          <div class="credentials-panel hidden">
+            <label class="input-group" for="email">
+              <input id="email" type="email" placeholder="Enter your email address" required />
+            </label>
+
+            <label class="input-group password-group" for="password">
+              <input id="password" type="password" placeholder="Enter your password" required />
+              <button class="password-toggle" type="button" aria-label="Show password">
+                <span aria-hidden="true">👁️</span>
+              </button>
+            </label>
+
+            <div class="form-meta">
+              <label class="remember-me">
+                <input type="checkbox" />
+                <span>Remember me</span>
+              </label>
+              <a href="#" class="forgot-link">Forgot password?</a>
+            </div>
+
+            <button class="sign-in-button" type="submit">Sign In</button>
+            <p class="form-status" id="form-status" aria-live="polite"></p>
+          </div>
+        </form>
+
+        <aside class="demo-box" aria-label="Demo credentials">
+          <h2>Demo Credentials</h2>
+          <div class="credential-row">
+            <strong>Admin</strong>
+            <span>admin@aibusiness.com</span>
+            <span>Password: Admin@123</span>
+          </div>
+          <div class="credential-row">
+            <strong>Entrepreneur</strong>
+            <span>entrepreneur@aibusiness.com</span>
+            <span>Password: Entrepreneur@123</span>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
