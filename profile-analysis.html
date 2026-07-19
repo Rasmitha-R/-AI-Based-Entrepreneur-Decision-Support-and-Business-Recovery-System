@@ -286,6 +286,248 @@
             <button class="reset-btn" id="reset-btn">🔄 Analyze Another Profile</button>
           </div>
         </div>
+
+        <!-- Budget Section -->
+        <div class="budget-section hidden" id="budget-section">
+          <div class="form-header">
+            <h1 class="form-title">Budget Planning</h1>
+          </div>
+
+          <!-- Selected Business Display -->
+          <div class="form-section">
+            <h2 class="section-title">🎯 Selected Business</h2>
+            <div class="business-display">
+              <span class="business-icon">🏢</span>
+              <span class="business-name" id="selected-business-name">Digital Marketing Agency</span>
+            </div>
+          </div>
+
+          <!-- Investment Input Form -->
+          <div class="form-section">
+            <h2 class="section-title">💵 Enter Investment Range</h2>
+            <form class="budget-form" id="budget-form">
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="min-budget">Minimum Budget (₹)</label>
+                  <input type="number" id="min-budget" name="min-budget" required placeholder="e.g., 200000" min="0" />
+                </div>
+                <div class="form-group">
+                  <label for="max-budget">Maximum Budget (₹)</label>
+                  <input type="number" id="max-budget" name="max-budget" required placeholder="e.g., 500000" min="0" />
+                </div>
+              </div>
+              
+              <!-- Budget Range Slider -->
+              <div class="form-group full-width">
+                <label for="budget-slider">Adjust Your Investment Budget</label>
+                <input type="range" id="budget-slider" name="budget-slider" min="50000" max="2000000" step="10000" value="350000" />
+                <div class="slider-value-display">
+                  <span class="slider-label">Selected Budget:</span>
+                  <span class="slider-value" id="slider-value">₹3,50,000</span>
+                </div>
+              </div>
+
+              <!-- Budget Health Indicator -->
+              <div class="budget-health-indicator" id="budget-health">
+                <span class="health-icon">💡</span>
+                <span class="health-text">Enter your budget range to see AI recommendations</span>
+              </div>
+
+              <button type="submit" class="analyze-btn">🎯 Analyze Budget</button>
+            </form>
+          </div>
+
+          <!-- Budget Results -->
+          <div class="budget-results hidden" id="budget-results">
+            <h2 class="results-title">🤖 AI Budget Breakdown</h2>
+            
+            <!-- Budget Breakdown -->
+            <div class="form-section">
+              <h2 class="section-title">💸 Estimated Cost Breakdown</h2>
+              <div class="breakdown-list" id="breakdown-list">
+                <!-- Dynamic content will be inserted here -->
+              </div>
+              <div class="total-cost-display">
+                <span class="total-label">Total</span>
+                <span class="total-value" id="total-cost">₹3,50,000</span>
+              </div>
+            </div>
+
+            <!-- AI Insights -->
+            <div class="form-section">
+              <h2 class="section-title">🧠 AI Financial Insights</h2>
+              <div class="insight-item">
+                <span class="insight-icon">📊</span>
+                <div class="insight-content">
+                  <span class="insight-label">Recommended Loan Amount</span>
+                  <span class="insight-value" id="loan-amount">₹1,50,000</span>
+                </div>
+              </div>
+              <div class="insight-item">
+                <span class="insight-icon">📈</span>
+                <div class="insight-content">
+                  <span class="insight-label">Expected Monthly Expenses</span>
+                  <span class="insight-value" id="monthly-expenses">₹45,000</span>
+                </div>
+              </div>
+              <div class="insight-item">
+                <span class="insight-icon">💰</span>
+                <div class="insight-content">
+                  <span class="insight-label">Expected Monthly Revenue</span>
+                  <span class="insight-value" id="monthly-revenue">₹75,000</span>
+                </div>
+              </div>
+              <div class="insight-item">
+                <span class="insight-icon">⏱️</span>
+                <div class="insight-content">
+                  <span class="insight-label">Break-even Estimate</span>
+                  <span class="insight-value" id="break-even">8 months</span>
+                </div>
+              </div>
+              <div class="insight-item">
+                <span class="insight-icon">💎</span>
+                <div class="insight-content">
+                  <span class="insight-label">Remaining Available Budget</span>
+                  <span class="insight-value" id="remaining-budget">₹1,50,000</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- AI Explanation -->
+            <div class="form-section">
+              <h2 class="section-title">✨ AI Recommendation</h2>
+              <p class="explanation-text" id="ai-explanation">
+                Based on your budget analysis, your Digital Marketing Agency has strong potential. With proper allocation of funds across registration, equipment, and marketing, you can expect to break even within 8 months. Consider allocating 15% of your budget to emergency reserves for unexpected expenses.
+              </p>
+            </div>
+
+            <!-- Action Section -->
+            <div class="results-actions-with-tracker">
+              <div class="progress-tracker">
+                <div class="tracker-label">Budget Planning Progress</div>
+                <div class="tracker-bar">
+                  <div class="tracker-fill" id="budget-tracker-fill"></div>
+                </div>
+                <div class="tracker-percentage" id="budget-tracker-percentage">100%</div>
+              </div>
+              <button class="glow-btn" id="continue-location-btn" type="button">
+                <span class="glow-text">Continue to Location</span>
+                <span class="glow-icon">→</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Location Section -->
+        <div class="location-section hidden" id="location-section">
+          <div class="form-header">
+            <h1 class="form-title">📍 Location Recommendation</h1>
+          </div>
+
+          <!-- Selected Business & Budget Display -->
+          <div class="form-section">
+            <h2 class="section-title">🎯 Business Summary</h2>
+            <div class="business-display">
+              <span class="business-icon">🏢</span>
+              <div class="business-info">
+                <span class="business-name" id="location-business-name">Digital Marketing Agency</span>
+                <span class="business-budget" id="location-business-budget">Budget: ₹3,50,000</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Location Input Form -->
+          <div class="form-section">
+            <h2 class="section-title">🗺️ Location Preferences</h2>
+            <form class="location-form" id="location-form">
+              <div class="form-grid">
+                <div class="form-group full-width">
+                  <label for="area-type">Preferred Area Type</label>
+                  <select id="area-type" name="area-type" required>
+                    <option value="">Select Area Type</option>
+                    <option value="urban">Urban (City Center)</option>
+                    <option value="semi-urban">Semi-Urban (Suburbs)</option>
+                    <option value="rural">Rural (Village)</option>
+                    <option value="commercial">Commercial Zone</option>
+                    <option value="residential">Residential Area</option>
+                    <option value="industrial">Industrial Area</option>
+                  </select>
+                </div>
+                <div class="form-group full-width">
+                  <label for="demand-level">Expected Demand Level</label>
+                  <select id="demand-level" name="demand-level" required>
+                    <option value="">Select Demand Level</option>
+                    <option value="high">High Demand</option>
+                    <option value="medium">Medium Demand</option>
+                    <option value="low">Low Demand</option>
+                  </select>
+                </div>
+                <div class="form-group full-width">
+                  <label for="competition-level">Competition Tolerance</label>
+                  <select id="competition-level" name="competition-level" required>
+                    <option value="">Select Competition Level</option>
+                    <option value="high">High Competition (Established Markets)</option>
+                    <option value="medium">Medium Competition (Balanced)</option>
+                    <option value="low">Low Competition (Emerging Markets)</option>
+                  </select>
+                </div>
+              </div>
+              <button type="submit" class="analyze-btn">🎯 Find Best Location</button>
+            </form>
+          </div>
+
+          <!-- Location Results -->
+          <div class="location-results hidden" id="location-results">
+            <h2 class="results-title">🤖 AI Location Recommendations</h2>
+            
+            <!-- KNN Process Visualization -->
+            <div class="form-section">
+              <h2 class="section-title">🧠 KNN Analysis Process</h2>
+              <div class="knn-process-steps" id="knn-steps">
+                <!-- Dynamic steps will be inserted here -->
+              </div>
+            </div>
+
+            <!-- Top Location Recommendations -->
+            <div class="form-section">
+              <h2 class="section-title">🏆 Top 3 Recommended Locations</h2>
+              <div class="location-recommendations" id="location-recommendations">
+                <!-- Dynamic recommendations will be inserted here -->
+              </div>
+            </div>
+
+            <!-- Location Details -->
+            <div class="form-section">
+              <h2 class="section-title">📊 Location Analysis Details</h2>
+              <div class="location-details" id="location-details">
+                <!-- Dynamic details will be inserted here -->
+              </div>
+            </div>
+
+            <!-- AI Explanation -->
+            <div class="form-section">
+              <h2 class="section-title">✨ AI Location Insight</h2>
+              <p class="explanation-text" id="location-explanation">
+                Based on KNN analysis, we've compared your business requirements with similar successful businesses in our database to find the optimal location match.
+              </p>
+            </div>
+
+            <!-- Action Section -->
+            <div class="results-actions-with-tracker">
+              <div class="progress-tracker">
+                <div class="tracker-label">Location Analysis Progress</div>
+                <div class="tracker-bar">
+                  <div class="tracker-fill" id="location-tracker-fill"></div>
+                </div>
+                <div class="tracker-percentage" id="location-tracker-percentage">100%</div>
+              </div>
+              <button class="glow-btn" id="continue-loss-btn" type="button">
+                <span class="glow-text">Continue to Loss Panel</span>
+                <span class="glow-icon">→</span>
+              </button>
+            </div>
+          </div>
+        </div>
       </main>
 
       <nav class="dashboard-bottom-bar" aria-label="Dashboard navigation">
@@ -296,6 +538,9 @@
         <button class="nav-item" type="button"><span>🧾</span><span>Report</span></button>
       </nav>
     </div>
+
+    <!-- Mobile Notification Toast -->
+    <div class="mobile-toast" id="mobile-toast"></div>
 
     <script src="profile-analysis.js"></script>
   </body>
